@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice set 3</title>
+    <link rel="stylesheet" href="../javascript\practiceset.css">
+    <style>
+        .class-button{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <button class="bag-button" onclick="cartquantity=cartquantity+1; document.querySelector('#cart-summary').innerText =`your bag has ${cartquantity}  items`; ">Add to Bag</button>
+
+    <button class="wishlist-button" onclick="cartquantity=cartquantity-1; document.querySelector('#cart-summary').innerText =`your bag has ${cartquantity}  items`;"> Move to Wishlist</button>
+
+    <button class="bag-button" onclick="cartquantity=cartquantity+2; document.querySelector('#cart-summary').innerText =`your bag has ${cartquantity}  items`">Add 1+1 Sale item</button>
+
+    <h1 id="cart-summary"></h1> 
+
+    <script>
+        let cartquantity=0;
+        document.querySelector('#cart-summary').innerText =`your bag has ${cartquantity}  items`; 
+    </script>
+    <!--
+    <button class="class-button">click</button>
+    <button id="id-button">id button</button>
+    <button class="class-button">class button</button>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate quidem, repellat maxime a ipsam molestiae amet nemo nesciunt exercitationem deleniti provident inventore, voluptatibus nihil! Ipsa iusto labore consectetur maiores ad.</p>
+   -->
+</body>
+</html>

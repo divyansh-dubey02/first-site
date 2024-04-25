@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRICKET GAME</title>
+    <style>
+        body{
+            text-align: center;
+        }
+        .choice-button{
+            height: 100px;
+            width: 100px;
+            border: none;
+            margin: 10px;
+            background-color: lightcoral;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        .cricket{
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+   
+    <h3>BAT BALL STUMP GAME</h3>
+      <button class="choice-button" onclick="console.log('you have chosen bat')
+       let computerchoice= generatecomputerchoice();
+        let resultmessage=getresult('bat',computerchoice);
+        showresult('bat',computerchoice,resultmessage);" ><img src="../images\image copy.png" alt="bat" class="cricket"></button>
+
+      <button class="choice-button" onclick="console.log('you have chosen ball')
+      computerchoice= generatecomputerchoice();
+      resultmessage=getresult('ball',computerchoice);
+      showresult('ball',computerchoice,resultmessage);"><img src="../images\image.png" alt="ball" class="cricket"></button>
+
+        <button   class="choice-button"  onclick="console.log('you have chosen stump')
+           computerchoice= generatecomputerchoice();
+           resultmessage=getresult('stump',computerchoice);
+             showresult('stump',computerchoice,resultmessage);"><img src="../images\stump.png" alt="stump" class="cricket"></button>
+      
+       <h3 id="user-move"></h3>
+       <h3 id="computer-move"></h3>
+       <h3 id="result"></h3>
+       <h3 id="score"></h3>
+
+       <button onclick="localStorage.clear();resetscore();">Reset</button>
+
+   <script>
+   /* let strscore=localStorage.getItem('score');
+    if(strscore!=undefined){
+      score=JSON.parse(strscore);
+    }else{
+    let score ={
+        win: 0,
+        lost: 0,
+        draw:0,
+       
+    };}*/
+    // OR
+    let strscore=localStorage.getItem('score');
+    let score;
+    resetscore(strscore);
+    function resetscore(strscore){
+     score= strscore ? JSON.parse(strscore):{
+      win: 0,
+     lost: 0,
+     draw:0,   
+    };
+    // truthy and falsy groud operator
+    score.displayscore=function(){
+            return `no of matches won: ${score.win}
+            no of matches lost:${score.lost}
+            no of matches draw:${score.draw}`
+        };
+        showresult();
+    };
+    function generatecomputerchoice(){
+        let randomnumber = Math.random() * 3;
+        if(randomnumber>0 && randomnumber<=1)
+        {  return'bat';
+          console.log('computer choice is bat');
+        } 
+        else if(randomnumber>1&&randomnumber<=2)
+        {   return'ball';
+            console.log('computer choice is ball');
+        }
+        else{return'stump';
+            console.log('computer choice is stump');
+        }
+    }
+    function getresult(usermove,computermove)
+    {
+        if(usermove==='bat')
+        {
+        if(computermove==='ball')
+        {  
+            score.win++;
+            return 'user wins';
+        }
+        else if(computermove==='bat'){
+            score.draw++;
+            return ' match draw';
+        }
+        else if(computermove==='stump'){
+            score.lost++;
+            return'computer wins';
+        }
+        }
+        else if(usermove==='ball'){
+            if(computermove==='ball')
+        {
+            score.draw++;
+            return'match draw';
+        }
+        else if(computermove==='bat'){
+            score.lost++;
+            return' computer wins';
+        }
+        else if(computermove==='stump'){
+            score.win++;
+            return'user wins';
+        }
+        }
+        else{
+            if(computermove==='ball')
+        {
+            score.lost++;
+            return 'computer wins';
+        }
+        else if(computermove==='bat'){
+            score.win++;
+            return' user wins';
+        }
+        else if(computermove==='stump'){
+            score.draw++;
+            return'match draw';
+        }
+
+        }
+    }
+    function showresult(usermove,computerchoice,resultmessage){
+        localStorage.setItem('score',JSON.stringify(score));
+        console.log(score);
+        document.querySelector('#user-move').innerText=usermove !==undefined ? `you have chosen ${usermove}`:'';
+        document.querySelector('#computer-move').innerText=
+        computerchoice!== undefined ? `computer choice is ${computerchoice}`:'';
+    
+        document.querySelector('#result').innerText=resultmessage !== undefined ? `and result is  
+ ${resultmessage}`:'';
+
+ document.querySelector('#score').innerText= 
+ `${score.displayscore()}`;
+        
+
+
+ alert(`you have chosen ${usermove} , computer choice is ${computerchoice} and result is${resultmessage}
+        ${score.displayscore()} `);
+    }
+   </script>
+</body>
+</html>

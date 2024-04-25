@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>advance functions</title>
+</head>
+<body>
+    <button id="my-button" > click me</button>
+    <script>
+   /*let buttonElement= document.querySelector('#my-button');
+   let behaviour=event=>console.log('i am clicked');
+   buttonElement.addEventListener('click',behaviour);
+   let date= event=>console.log(new Date());
+   buttonElement.addEventListener('click',date);
+
+   buttonElement.removeEventListener('click',behaviour);
+
+
+   let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+   console.log("given array is");
+   arr.forEach(element => {
+     console.log(element);
+   });
+
+function search(arr, num) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === num) {
+            return i;
+        }
+    }
+    return -1; // Return -1 if the number is not found in the array
+}
+
+let num = parseInt(prompt("Enter the number to be searched")); // Parsing user input to integer
+let index = search(arr, num);
+
+if (index !== -1) {
+    console.log(`Given number ${num} is at index ${index}`);
+} else {
+    console.log(`Given number ${num} is not found in the array`);
+}
+
+
+*/
+
+let arr=[1,2,3,4,5,6,7,8,9,10];
+ let odds= arr.filter((num,index) =>{
+    if(num%2===1){
+        return true;}
+        else{
+            return false;
+        }
+    }
+);
+console.log(odds);
+let newodds=arr.filter((num,index)=>num%2===1);
+ console.log(newodds);
+
+let reduced =arr.reduce((num,num2)=>num+num2);
+console.log(reduced);
+
+let greatest=arr.reduce((prev,curr)=> prev>curr ? prev:curr);
+console.log(greatest);
+
+
+let smallest=arr.reduce((prev,curr)=> prev<curr ? prev:curr);
+console.log(smallest);
+
+let square=arr.map(num=>num*num);
+   console.log(square);
+
+   let table=arr.map(num=>num*2);
+   console.log(table);
+
+
+
+        /*
+       let sum= function(num1,num2){
+          return num1+num2;
+        };
+
+        console.log(sum(4,5));
+        newsum=sum;
+        console.log(newsum(10,12));
+     //function can be passed as value to another function 
+      let sumthreenum= function(num1,num2,num3,sumtwonum){
+let sum1=sumtwonum(num1,num2);
+       return sumtwonum(sum1,num3);
+      }
+  console.log(sumthreenum(5,6,7,sum));
+  console.log(sumthreenum);
+  console.log(typeof sumthreenum);
+  console.log(sum(5,6));
+  let sum=(num1,num2)=>{
+      return num1+num2;
+    }
+    console.log(sum(3,4));
+    let square=num=>num*num;
+    console.log(square(3));
+    // set time out and set interval
+    let alaram =()=>console.log(`subha ho gayi mamu aye mamu ${new Date()}`);
+    //let timerid= setTimeout(alaram,10000);
+    // console.log(`hello mamu kya haal chal: ${timerid}`);
+    // clearTimeout(timerid);
+    
+    let intervalid=setInterval(alaram,1000);
+    setTimeout(()=>clearInterval(intervalid),5000);
+    */
+     
+
+    </script>
+    
+</body>
+</html>

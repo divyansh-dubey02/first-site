@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice advance function</title>
+    <style>
+        .btn-suscribe{
+            text-align: center;
+            height: 40px;
+            width: 100px;
+            background-color: red;
+            font-weight: 700;
+            font-size: 15px; 
+            border: none;
+            border-radius: 10px;
+            color:white;
+        }
+
+       .size-double{
+        font-size: 40px;
+        height: 60px;
+        width: 200px;
+       }
+
+
+    </style>
+</head>
+<body>
+    <button class="btn-suscribe" onclick=";">suscribe</button>
+ <script>
+    let buttonElement=document.querySelector('.btn-suscribe');
+    buttonElement.addEventListener('click',event=>setTimeout(doublethesize,5000)
+    );
+   function doublethesize() {
+     let buttonElement = document.querySelector('.btn-suscribe');
+         buttonElement.classList.add('size-double');
+   } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   /* let multiply =(num1,num2)=>num1*num2;
+   console.log(multiply(2,4));
+
+   let printgreeting =()=> console.log('namaste');
+   let runtwice= inputfunction =>{
+    inputfunction();
+    inputfunction();
+   };
+   runtwice(printgreeting);*/
+ </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSEUDO CLASS</title>
+    <style>
+       /* .pseudo{
+            height: 25px;
+            width: 160px;
+            background-color: greenyellow;
+            border: 2px solid black;
+            border-radius: 10px;
+
+            transition-property: all;
+            transition-duration: 1s;
+            transition-timing-function:ease-in-out ;
+            transition-delay: 0s;
+        }
+        .pseudo:hover{
+            height: 40px;
+            width: 200px;
+            background-color: lightcoral;
+        }
+        .pseudo:active{
+            height: 25px;
+            width: 170px;
+            background-color:red;
+        }
+        
+        .box{
+            height: 50px;
+            width: 50px;
+            background-color: aqua;
+            border: 2px solid black;
+            border-radius: 5px;
+            text-align: center;
+            position: relative;
+            top:100px;
+            left: 100px;
+            transition: all 0.5s ease-in;
+        }
+        
+        .box:hover{
+            transform: scale(3);
+        }
+        .box{
+            height: 100px;
+            width: 100px;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: aqua;
+            position: relative;
+            top: 10px;
+            left:10px;
+            text-align: center;
+            
+            animation-name: chakri;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+        }
+        
+        @keyframes chakri {
+            0%{left: 10px; top: 20px;}
+            50% {left: 210px; top: 200px;}
+            100% {left: 400px; top: 20px;}
+            
+        }
+        */
+        .progressbar{
+            height: 25px;
+            width: 90%;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: aqua;
+            position: relative;
+            left: 2px;
+        }
+
+        .progressicon{
+            height: 100%;
+            width: 40%;
+            background-color: red;
+            animation-name: progress;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        
+        }
+        
+        @keyframes progress {
+            0%{width: 0%;}
+            100% {width: 100%;}
+            
+        }
+    </style>
+</head>
+<body>
+<!--<button class="pseudo"> LEARNING PSEUDO</button>
+    <div class="box">rotate</div>
+    <div class="box">ANIMATION</div>
+-->
+<div class="progressbar">
+
+    <div class="progressicon"></div>
+</div>
+</body>
+</html>
